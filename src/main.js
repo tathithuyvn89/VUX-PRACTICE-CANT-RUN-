@@ -1,8 +1,15 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from 'vue';
 
-Vue.config.productionTip = false
+import { store } from './_store';
+import { router } from './_helpers';
+import App from './app/App';
+
+// setup fake backend
+import { configureFakeBackend } from './_helpers';
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+    el: '#app',
+    router,
+    store,
+    render: h => h(App)
+});
